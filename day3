@@ -1,0 +1,69 @@
+*Wazuh*
+linux
+root
+C1sc0123
+systemctl stop firewalld
+ip addr
+https://208.8.8.137
+admin
+C1sc0123..
+
+
+<directories realtime="yes" report_changes="yes" check_all="yes">C:\Users\Administrator\Desktop\jonel</directories>
+
+*elkstack creds*
+Linux:
+root
+C1sc0123
+ip addr
+https://2http://192.168.102.133:5601/
+admin
+C1sc0123
+
+*Cisco*
+conf t
+int g1
+now shut
+ip addr dhcp
+end
+sh ip int br
+
+conf t
+logging on
+logging host 192.168.102.133 transport udp port 9001
+logging trap informational
+end
+
+conf t
+login on-failure log
+login on-success log
+end
+
+
+conf t
+archive
+log config
+logging enable
+notify syslog
+end
+
+https://codeshare.io/migs
+
+
+config t
+NO ip access-list standard NOPORN
+ip access-list standard NOPORN
+DENY 66.254.0.0 0.0.255.255  log
+deny 161.49.0.0 0.0.255.255  log
+DENY 104.21.0.0 0.0.255.255  log
+DENY 68.235.0.0 0.0.255.255  log
+DENY 104.17.0.0 0.0.255.255  log
+DENY 88.208.0.0 0.0.255.255  log
+DENY 208.77.0.0 0.0.255.255  log
+DENY 172.67.0.0 0.0.255.255  log
+DENY 172.66.0.0 0.0.255.255  log
+DENY 162.159.0.0 0.0.255.255 log
+Permit Any
+Int Gi 1
+ ip access-group NOPORN in
+end
