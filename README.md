@@ -74,3 +74,20 @@ http://(IP of Rocky Linux):5601
 
 
 Ticket#2026082271000012 )
+
+
+
+
+conf t
+aaa new-model
+username admin password pass
+radius-server host 10.91.1.8 key aaaaaaaa
+ip radius source vlan 1
+aaa authorization exec default group radius
+aaa authentication login default group radius local
+line vty 0 14
+login authentication default
+end
+
+shell:priv-lvl=15
+
